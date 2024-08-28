@@ -8,11 +8,24 @@
 <body>
 
 <h1>User Registration</h1>
-<form action="" method="post">
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
     <label for="Username">User Name</label>
     <input type="text" name="username">
     <button type="submit">Submit</button>
 </form>
     
+<?php 
+
+if($_SERVER['REQUEST_METHOD']== "POST"){
+    $username = $_REQUEST['username'];
+    
+    if(!empty($username)){
+        echo $username;
+    } else {
+        echo "Please fillup in the forms";
+    }
+}
+
+?>
 </body>
 </html>
