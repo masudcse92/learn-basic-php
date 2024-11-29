@@ -59,7 +59,10 @@ $persons = array (
 $file_pointer = fopen($file_name, "w");
 
 foreach( $persons as $person){
-    $data = sprintf("%s, %s, %s\n", $person['name'], $person['mail'], $person['age']);
-    fwrite($file_pointer, $data);
+    // $data = sprintf("%s, %s, %s\n", $person['name'], $person['mail'], $person['age']);
+    // fwrite($file_pointer, $data);
+
+    fputcsv($file_pointer, $person);
 }
+fclose($file_pointer);
 ?>
