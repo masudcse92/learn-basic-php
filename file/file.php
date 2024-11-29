@@ -37,7 +37,7 @@
 
 $file_name = "C:\\laragon\\www\\learn-basic-php\\file\\text.php";
 
-$person = array (
+$persons = array (
     array (
         'name' => 'Jone Deo',
         'mail' => 'jone@gmail.com',
@@ -56,10 +56,10 @@ $person = array (
 );
 
 
-$file_pointer = fopen($file_name, 'w');
+$file_pointer = fopen($file_name, "w");
 
 foreach( $persons as $person){
-    $data = sprintf("%s, %s, %s", $person['name'], $person['mail'], $person['age']);
+    $data = sprintf("%s, %s, %s\n", $person['name'], $person['mail'], $person['age']);
     fwrite($file_pointer, $data);
 }
 ?>
